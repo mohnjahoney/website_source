@@ -3,11 +3,11 @@
 from __future__ import unicode_literals
 from typing import Any
 
-RELATIVE_URLS = True
+# RELATIVE_URLS = True
 _DEFAULT_LANGUAGE = "en"
 PATH = "content"
 AUTHOR = "John Mahoney"
-SITENAME = "John Mahoney's Blog"
+SITENAME = "John Mahoney"
 SITETITLE = SITENAME
 SITESUBTITLE = "Data Scientist | Applied Mathematician"
 SITEURL = "https://mohnjahoney.github.io"
@@ -16,26 +16,10 @@ IGNORE_FILES = ["*.html", "*.rst"]
 DISPLAY_PAGES_ON_MENU = True
 RELATED_POSTS_SKIP_SAME_CATEGORY = True
 
-# DISQUS_SITENAME = "jackmckew-dev"
-# GOOGLE_ANALYTICS = "UA-131173168-2"
-
-# GOOGLE_ADSENSE = {
-#     'ca_id': 'ca-pub-1052275056735196',    # Your AdSense ID
-#     'page_level_ads': True,          # Allow Page Level Ads (mobile)
-#     'ads': {
-#         'aside': '1234561',          # Side bar banner (all pages)
-#         'main_menu': '1234562',      # Banner before main menu (all pages)
-#         'index_top': '1234563',      # Banner after main menu (index only)
-#         'index_bottom': '1234564',   # Banner before footer (index only)
-#         'article_top': '1234565',    # Banner after article title (article only)
-#         'article_bottom': '1234566', # Banner after article content (article only)
-#     }
-# }
-
-USE_TIPUE_SEARCH = True
+# USE_TIPUE_SEARCH = True
+USE_TIPUE_SEARCH = False
 
 GITHUB_CORNER_URL = "https://github.com/mohnjahoney/mohnjahoney.github.io"
-# GITHUB_CORNER_URL = "https://github.com/JackMcKew/jackmckew.dev"
 
 ARTICLE_URL = "{slug}.html"
 # ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
@@ -44,27 +28,38 @@ ARTICLE_SAVE_AS = "{slug}.html"
 # MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 # DAY_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/index.html'
 
-THEME = "./themes/Flex"
+#THEME = "./themes/Flex"
+THEME = "./themes/pure-single"
+#THEME = "./themes/Peli-Kiera"
+
 # STATIC_PATHS = ["content/img","static"]
-STATIC_PATHS = ["img", "files", "html", "extra", "2018", "2019", "2020", "2021"]
+STATIC_PATHS = ["images", "files", "pdfs", "html", "extra", "2018", "2019", "2020", "2021"]
 # STATIC_SAVE_AS = "{dirname}"
 EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},
-    "extra/jm-photo.jpg": {"path": "jm-photo.jpg"},
+    #"extra/jm-photo.jpg": {"path": "jm-photo.jpg"},
     "extra/CNAME": {"path": "CNAME"},
 }
-SITELOGO = "/jm-photo.jpg"
+#SITELOGO = "/jm-photo.jpg"
 # EXTRA_PATH_METADATA = {
 # 'img/favicon.ico' : {'path' : 'favicon.ico'}
 # }
 FAVICON = "/favicon.ico"
 # CUSTOM_CSS = THEME + "static/custom.css"
 
-USE_FOLDER_AS_CATEGORY = False
+USE_FOLDER_AS_CATEGORY = True
 MAIN_MENU = True
 HOME_HIDE_TAGS = False
 
+# TAG_URL = 'tags/{slug}.html'
+# TAG_SAVE_AS = 'tags/{slug}.html'
+# PAGINATION_PATTERNS = (
+#     (1, '{name}.html', '{name}.html'),
+#     (2, '{name}/page/{number}.html', '{name}/page/{number}.html'),
+# )
+
 MENUITEMS = (
+    ('Resume', '/pdfs/John_Mahoney_resume.pdf'),
     # ("Authors", "/authors.html"),
     ("Archives", "/archives.html"),
     ("Categories", "/categories.html"),
@@ -89,12 +84,8 @@ PLUGIN_PATHS = [
     # './plugins/pelican_youtube'
 ]
 
-# PLUGIN_PATHS = [
-#     "C:\\\\Users\\jackm\\.virtualenvs\\blog-mLKe2F5s\\Lib\\site-packages\\pelican\\pelican-plugins",
-#     "C:\\\\Users\\jackm\\.virtualenvs\\blog-mLKe2F5s\\Lib\\site-packages\\pelican\\pelican-plugins\\pelican_youtube",
-# ]
-
-DIRECT_TEMPLATES = ("index", "authors", "tags", "categories", "archives", "search")
+# This appears to do nothing.
+# DIRECT_TEMPLATES = ("index", "authors", "tags", "categories", "archives", "search")
 
 PLUGINS = [
     "sitemap",
@@ -120,8 +111,9 @@ PLUGINS = [
     "clean_summary",
 ]
 CLEAN_SUMMARY_MAXIMUM = 1
-# MARKUP = ('md', 'ipynb')
-MARKUP = ("md",)
+MARKUP = ('md', 'ipynb')
+# MARKUP = ("md",)
+IGNORE_FILES = [".ipynb_checkpoints"]
 MARKDOWN = {
     "extension_configs": {
         "markdown.extensions.codehilite": {
@@ -137,7 +129,7 @@ MARKDOWN = {
 }
 # IPYNB_USE_METACELL = True
 
-# IGNORE_FILES = [".ipynb_checkpoints"]
+
 
 DELETE_OUTPUT_DIRECTORY = True
 
@@ -145,18 +137,18 @@ DELETE_OUTPUT_DIRECTORY = True
 # ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
 # ARTICLE_URL = '{date:%Y}/{slug}.html'
 
-TIMEZONE = "Australia/Sydney"
+TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = "en"
 #DEFAULT_LANG = "English"
 
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM: Any = "feeds/all.atom.xml"
-CATEGORY_FEED_ATOM: Any = "feeds/{slug}.atom.xml"
-TRANSLATION_FEED_ATOM: Any = None
-AUTHOR_FEED_ATOM: Any = None
-AUTHOR_FEED_RSS: Any = None
-FEED_MAX_ITEMS = 5
+# # Feed generation is usually not desired when developing
+# FEED_ALL_ATOM: Any = "feeds/all.atom.xml"
+# CATEGORY_FEED_ATOM: Any = "feeds/{slug}.atom.xml"
+# TRANSLATION_FEED_ATOM: Any = None
+# AUTHOR_FEED_ATOM: Any = None
+# AUTHOR_FEED_RSS: Any = None
+# FEED_MAX_ITEMS = 5
 
 
 # Social widget
@@ -176,15 +168,15 @@ DEFAULT_PAGINATION = 10
 # WORD_TICKER = wordsum.count_words("./content", [".md", ".ipynb"])
 # WORD_TICKER = f"{WORD_TICKER:,}"
 
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 # import count_loc
 
-custom_js_files = [
-    "content/2020/virus-outbreak-simulation/js/virus_part_1.js",
-    "content/2020/canvas-javascript-bouncing-balls/js/bouncing_balls.js",
-]
+# custom_js_files = [
+#     "content/2020/virus-outbreak-simulation/js/virus_part_1.js",
+#     "content/2020/canvas-javascript-bouncing-balls/js/bouncing_balls.js",
+# ]
 
 # language_stat = count_loc.get_total_loc(
 #     "content", [".py", ".md", ".ipynb"], custom_js_files
@@ -192,3 +184,6 @@ custom_js_files = [
 
 # LOC_TICKER = sum(language_stat.values())
 # LOC_TICKER = f"{LOC_TICKER:,}"
+
+PROFILE_IMG_URL = 'images/me.jpg'
+TAGLINE = 'DATA SCIENTIST | APPLIED MATHEMATICIAN'
