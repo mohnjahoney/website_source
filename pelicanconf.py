@@ -16,8 +16,8 @@ IGNORE_FILES = ["*.html", "*.rst"]
 DISPLAY_PAGES_ON_MENU = True
 RELATED_POSTS_SKIP_SAME_CATEGORY = True
 
-DISQUS_SITENAME = "jackmckew-dev"
-GOOGLE_ANALYTICS = "UA-131173168-2"
+# DISQUS_SITENAME = "jackmckew-dev"
+# GOOGLE_ANALYTICS = "UA-131173168-2"
 
 # GOOGLE_ADSENSE = {
 #     'ca_id': 'ca-pub-1052275056735196',    # Your AdSense ID
