@@ -1,0 +1,4 @@
+TODO:
+
+- Get rid of things having to do with wordsum.
+I think this includes: WORD_TICKER, POST_TICKER, LOC_TICKER?
