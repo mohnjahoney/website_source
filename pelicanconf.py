@@ -3,8 +3,13 @@
 from __future__ import unicode_literals
 from typing import Any
 
-# RELATIVE_URLS = True
+RELATIVE_URLS = False # Appears to not matter for this theme. It *does matter in publishconf.py
+
+DEFAULT_LANG = "en"
+#DEFAULT_LANG = "English"
 _DEFAULT_LANGUAGE = "en"
+TIMEZONE = 'America/Los_Angeles'
+
 PATH = "content"
 AUTHOR = "John Mahoney"
 SITENAME = "John Mahoney"
@@ -33,21 +38,22 @@ THEME = "./themes/pure-single"
 #THEME = "./themes/Peli-Kiera"
 
 # STATIC_PATHS = ["content/img","static"]
-STATIC_PATHS = ["images", "files", "pdfs", "html", "extra", "2018", "2019", "2020", "2021"]
+STATIC_PATHS = ["img", "images", "pdfs", "extra", "pages"] # , "2018", "2019", "2020", "2021"
 # STATIC_SAVE_AS = "{dirname}"
 EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},
-    #"extra/jm-photo.jpg": {"path": "jm-photo.jpg"},
+    # "extra/jm-photo.jpg": {"path": "jm-photo.jpg"},
+    # "images/me.jpg": {"path": "me.jpg"},
     "extra/CNAME": {"path": "CNAME"},
 }
-#SITELOGO = "/jm-photo.jpg"
+# SITELOGO = "/jm-photo.jpg"
 # EXTRA_PATH_METADATA = {
 # 'img/favicon.ico' : {'path' : 'favicon.ico'}
 # }
 FAVICON = "/favicon.ico"
 # CUSTOM_CSS = THEME + "static/custom.css"
 
-USE_FOLDER_AS_CATEGORY = True
+USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
 HOME_HIDE_TAGS = False
 
@@ -60,6 +66,8 @@ HOME_HIDE_TAGS = False
 
 MENUITEMS = (
     ('Resume', '/pdfs/John_Mahoney_resume.pdf'),
+    # ('rad menu item', '/images/schwartzwald.jpg'),
+    ('Projects', '/pages/projects.html'),
     # ("Authors", "/authors.html"),
     ("Archives", "/archives.html"),
     ("Categories", "/categories.html"),
@@ -84,8 +92,8 @@ PLUGIN_PATHS = [
     # './plugins/pelican_youtube'
 ]
 
-# This appears to do nothing.
-# DIRECT_TEMPLATES = ("index", "authors", "tags", "categories", "archives", "search")
+# Looks like this might be important for the TIPUE_SEARCH
+DIRECT_TEMPLATES = ("index", "authors", "tags", "categories", "archives", "search")
 
 PLUGINS = [
     "sitemap",
@@ -107,12 +115,12 @@ PLUGINS = [
     "pelican_javascript",
     "render_math",
     "related_posts",
-    # "autostatic",
+    # "autostatic", # now a pip package
     "clean_summary",
 ]
 CLEAN_SUMMARY_MAXIMUM = 1
-MARKUP = ('md', 'ipynb')
-# MARKUP = ("md",)
+# MARKUP = ('md', 'ipynb')
+MARKUP = ("md",)
 IGNORE_FILES = [".ipynb_checkpoints"]
 MARKDOWN = {
     "extension_configs": {
@@ -129,18 +137,11 @@ MARKDOWN = {
 }
 # IPYNB_USE_METACELL = True
 
-
-
 DELETE_OUTPUT_DIRECTORY = True
 
-# ARTICLE_PATHS = ['blog']
+# ARTICLE_PATHS = ['articles']
 # ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
 # ARTICLE_URL = '{date:%Y}/{slug}.html'
-
-TIMEZONE = 'America/Los_Angeles'
-
-DEFAULT_LANG = "en"
-#DEFAULT_LANG = "English"
 
 # # Feed generation is usually not desired when developing
 # FEED_ALL_ATOM: Any = "feeds/all.atom.xml"
@@ -158,9 +159,6 @@ SOCIAL = (
 )
 
 DEFAULT_PAGINATION = 10
-
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
 
 # import wordsum
 
@@ -185,5 +183,5 @@ DEFAULT_PAGINATION = 10
 # LOC_TICKER = sum(language_stat.values())
 # LOC_TICKER = f"{LOC_TICKER:,}"
 
-PROFILE_IMG_URL = 'images/me.jpg'
+PROFILE_IMG_URL = '/images/me.jpg' # NOTE: leading slash was important
 TAGLINE = 'DATA SCIENTIST | APPLIED MATHEMATICIAN'

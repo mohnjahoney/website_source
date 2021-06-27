@@ -13,8 +13,11 @@ from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = "https://mohnjahoney.git.io"
+
+# Note about RELATIVE_URLS:
+# With the pure-single theme, it appears that things work fine locally with either setting. However, for publishing to GH, you need True. I believe this same behavior is *not* true for other themes, but I'm not sure.
 # RELATIVE_URLS = False
-RELATIVE_URLS = True # This seems necessary with the pure-single theme
+RELATIVE_URLS = True # Careful
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"

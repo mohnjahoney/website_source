@@ -4,7 +4,7 @@ Author: J
 Slug: cv-professional
 Status: published
 
-[Thesis: "EofToCM"]({attach}/files/dissertation.pdf)
+[Thesis: "EofToCM"]({attach}/pdfs/dissertation.pdf)
 
 ## Experience
 
