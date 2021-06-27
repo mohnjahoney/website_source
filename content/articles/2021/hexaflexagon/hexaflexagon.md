@@ -7,9 +7,13 @@ Slug: hexaflexagon
 
 Hexaflexagons are strange, paper creatures made of origami and a sprinkle of magic.
 
-You say, ``But it looks like a hexagonal coaster for my coffee... what's cool about that?''
+"But it looks like a hexagonal coaster for my coffee..", you say, "what's cool about that?"
 
 What's cool is that this coaster has *three* sides!
+
+![smiley]({static}/img/flexagon.gif){height=50 width=50}
+
+
 
 <!-- TODO: INSERT GIF of colored HFG - not images -->
 
