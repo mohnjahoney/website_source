@@ -3,7 +3,8 @@
 from __future__ import unicode_literals
 from typing import Any
 
-RELATIVE_URLS = False # Appears to not matter for this theme. It *does matter in publishconf.py
+# Note: Some resources say this should be False. When I make it False, some things seem to break in the make html / make serve.
+RELATIVE_URLS = True
 
 DEFAULT_LANG = "en"
 #DEFAULT_LANG = "English"
