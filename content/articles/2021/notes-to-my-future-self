@@ -1,7 +1,0 @@
-
-
-## Notes to my future self:
-
-- Make sure you are using the virtual environment. Otherwise the wrong package versions will load and all-format-hell breaks loose.
-
-- After you make a change that you like, however modest, please take the time to update both the source *and* the html. 
